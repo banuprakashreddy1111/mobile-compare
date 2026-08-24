@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mobile Compare — Spec Terminal</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <div class="scanline" aria-hidden="true"></div>
+
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="brand">
+        <span class="brand-mark">◆</span>
+        <span class="brand-name">MOBILE&nbsp;COMPARE</span>
+      </div>
+      <div class="eyebrow">SPEC&nbsp;TERMINAL&nbsp;// IN&nbsp;STOCK&nbsp;INDIA</div>
+    </div>
+    <h1 class="hero-title">Put two phones<br>on the bench.</h1>
+    <p class="hero-sub">Full spec readout, side by side. Every difference measured — not just listed.</p>
+  </header>
+
+  <main class="container">
+
+    <section class="terminal-search">
+      <div class="terminal-head">
+        <span class="dot dot-r"></span><span class="dot dot-y"></span><span class="dot dot-g"></span>
+        <span class="terminal-label">lookup — not in the index below</span>
+      </div>
+      <div class="terminal-body">
+        <span class="prompt">&gt;</span>
+        <input type="text" id="anySearchInput" placeholder="type a model name, e.g. iQOO Z7 Pro" autocomplete="off">
+        <button id="anySearchBtn">RUN</button>
+      </div>
+      <div id="anySearchResult" class="result hidden"></div>
+    </section>
+
+    <section class="picker">
+      <div class="picker-col">
+        <label for="phone1"><span class="tag">A</span>Phone one</label>
+        <select id="phone1">
+          <option value="">Select a phone…</option>
+          {% for p in phones %}
+          <option value="{{ p.id }}">{{ p.brand }} {{ p.name }}</option>
+          {% endfor %}
+        </select>
+      </div>
+
+      <div class="vs">
+        <span>VS</span>
+      </div>
+
+      <div class="picker-col">
+        <label for="phone2"><span class="tag">B</span>Phone two</label>
+        <select id="phone2">
+          <option value="">Select a phone…</option>
+          {% for p in phones %}
+          <option value="{{ p.id }}">{{ p.brand }} {{ p.name }}</option>
+          {% endfor %}
+        </select>
+      </div>
+    </section>
+
+    <div class="compare-btn-wrap">
+      <button id="compareBtn">Run comparison</button>
+      <span class="compare-hint">{{ phones|length }} models indexed</span>
+    </div>
+
+    <section id="result" class="result hidden"></section>
+  </main>
+
+  <footer>
+    <p>Prices shown are indicative starting prices, not live. Store links open live listings on each retailer.</p>
+  </footer>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
