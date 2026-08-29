@@ -1,25 +1,61 @@
 # Mobile Compare
 
-A working phone comparison website. Pick two phones, see specs side by side, jump to Amazon/Flipkart to buy.
+## Project Overview
 
-## Run it
+Mobile Compare is a web application that helps users compare mobile phones based on their specifications and indicative prices.
 
-```bash
-pip install -r requirements.txt
-python3 server.py
-```
+Users can select two phones and view their specifications side by side, making it easier to evaluate different devices before purchasing.
 
-Then open **http://localhost:8000** in your browser.
+The application also provides direct links to Amazon and Flipkart so users can check current prices and purchasing options.
 
-## What's included
+## Live Demo
 
-- `server.py` — FastAPI app (routes + API)
-- `templates/index.html` — the page
-- `static/style.css`, `static/app.js` — styling + compare logic
-- `data/phones.json` — built-in database of 15 popular phones (specs + indicative prices)
+🌐 **Try the application:**  
+https://mobile-compare-ejiy.onrender.com/
 
-## Notes
+The application is deployed online and can be accessed directly through a web browser.
 
-- Prices in `data/phones.json` are indicative/starting prices, not live. Amazon/Flipkart don't offer a public price API, so each phone has direct search links to check live prices instead of an unreliable live scraper.
-- To add more phones, just add another entry to `data/phones.json` — no code changes needed.
-- To update prices, edit `price_inr` in that same file.
+## Features
+
+- Compare two mobile phones side by side
+- View important phone specifications
+- Compare indicative prices
+- View RAM information
+- View storage information
+- View camera specifications
+- Access Amazon shopping/search links
+- Access Flipkart shopping/search links
+- Simple and user-friendly interface
+- Phone data stored in JSON
+- Easy to add new phones without changing application code
+
+## Technologies Used
+
+- Python
+- FastAPI
+- HTML
+- CSS
+- JavaScript
+- JSON
+- Git
+- GitHub
+- Render
+
+## Project Structure
+
+```text
+mobile-compare/
+│
+├── data/
+│   └── phones.json
+│
+├── static/
+│   ├── style.css
+│   └── app.js
+│
+├── templates/
+│   └── index.html
+│
+├── README.md
+├── requirements.txt
+└── server.py
